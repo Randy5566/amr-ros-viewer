@@ -1,7 +1,7 @@
-import { lazy, Suspense } from "react";
-import { motion } from "framer-motion";
-import { Bot, ChevronDown, Loader2, Sparkles } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import {lazy, Suspense} from "react";
+import {motion} from "framer-motion";
+import {Bot, ChevronDown, Loader2, Sparkles} from "lucide-react";
+import {Badge} from "@/components/ui/badge";
 
 const LidarScene3D = lazy(() =>
   import("@/components/viz/LidarScene3D").then((m) => ({
@@ -10,9 +10,9 @@ const LidarScene3D = lazy(() =>
 );
 
 const STATS = [
-  { k: "6", label: "核心子系統" },
-  { k: "13", label: "互動視覺化章節" },
-  { k: "ROS 2", label: "軟體骨幹" },
+  {k: "6", label: "核心子系統"},
+  {k: "13", label: "互動視覺化章節"},
+  {k: "ROS 2", label: "軟體骨幹"},
 ];
 
 export function Hero() {
@@ -22,11 +22,11 @@ export function Hero() {
       <div className="pointer-events-none absolute -left-32 top-0 size-96 rounded-full bg-primary/20 blur-[120px]" />
       <div className="pointer-events-none absolute -right-32 bottom-0 size-96 rounded-full bg-accent/10 blur-[120px]" />
 
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-6 py-16 md:py-24 lg:grid-cols-2 lg:items-center">
+      <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-16 md:py-24 lg:grid-cols-2 lg:items-center">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{opacity: 0, y: 24}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 0.6}}
         >
           <Badge className="mb-5 gap-1.5" variant="accent">
             <Sparkles className="size-3.5" />
@@ -38,8 +38,8 @@ export function Hero() {
             技術科普視覺化
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            底車不是只有輪子。從 LiDAR 感測、SLAM 建圖、粒子濾波定位，到
-            Nav2 導航、成本地圖、分層避障與差速運動控制——
+            底車不是只有輪子。從 LiDAR 感測、SLAM 建圖、粒子濾波定位，到 Nav2
+            導航、成本地圖、分層避障與差速運動控制——
             以可互動的動畫，一步步看懂自主移動機器人的運作原理。
           </p>
 
@@ -63,9 +63,9 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
+          initial={{opacity: 0, scale: 0.95}}
+          animate={{opacity: 1, scale: 1}}
+          transition={{duration: 0.7, delay: 0.15}}
         >
           <Suspense
             fallback={
@@ -77,15 +77,15 @@ export function Hero() {
             <LidarScene3D />
           </Suspense>
           <p className="mt-2 text-center text-xs text-muted-foreground">
-            three.js · 機器人以 2D LiDAR 掃描室內，紅點為即時累積的 /scan 點雲
+            機器人以 2D LiDAR 掃描室內，紅點為即時累積的 /scan 點雲
           </p>
         </motion.div>
       </div>
 
       <div className="relative flex justify-center pb-8">
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity }}
+          animate={{y: [0, 8, 0]}}
+          transition={{duration: 1.8, repeat: Infinity}}
           className="flex flex-col items-center gap-1 text-muted-foreground/60"
         >
           <span className="text-xs">向下捲動探索</span>

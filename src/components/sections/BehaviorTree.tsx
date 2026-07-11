@@ -27,7 +27,7 @@ export function BehaviorTree() {
         <BehaviorTreeViz />
       </VizFrame>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div>
           <h3 className="mb-3 text-lg font-semibold">導覽機器人的到站行為</h3>
           <CodeBlock>{`導航到站點

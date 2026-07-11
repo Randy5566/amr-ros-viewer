@@ -11,7 +11,10 @@
       "Bash(kill %1)",
       "Bash(pkill -f \"vite\")",
       "mcp__Claude_Preview__preview_start",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(perl -pi -e 's/\"grid gap-/\"grid grid-cols-1 gap-/g' src/components/sections/*.tsx src/components/viz/*.tsx src/components/layout/*.tsx)",
+      "Bash(perl -pi -e 's/grid max-w-6xl gap-/grid max-w-6xl grid-cols-1 gap-/g' src/components/layout/Hero.tsx)",
+      "Bash(perl -pi -e 's/grid gap-6 lg:/grid grid-cols-1 gap-6 lg:/g' src/components/sections/*.tsx)"
     ]
   }
 }

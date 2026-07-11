@@ -27,7 +27,7 @@ export function KinematicsViz() {
   const mode = driveMode(wheels);
 
   return (
-    <div className="grid gap-4 md:grid-cols-[1.4fr_1fr]">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-[1.4fr_1fr]">
       <Canvas2D
         ariaLabel="差速底車運動學：調整 linear.x 與 angular.z，觀察左右輪速度與機器人軌跡"
         className="h-[320px] rounded-lg border border-border/60 bg-[#0a1120]"

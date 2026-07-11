@@ -47,8 +47,8 @@ export function Safety() {
         </TabsList>
 
         <TabsContent value="failures">
-          <div className="overflow-hidden rounded-xl border border-border/60">
-            <table className="w-full text-sm">
+          <div className="scrollbar-thin overflow-x-auto rounded-xl border border-border/60">
+            <table className="w-full min-w-[420px] text-sm">
               <thead>
                 <tr className="bg-secondary/50 text-left">
                   <th className="px-4 py-2.5 font-medium">失效情境</th>
@@ -68,7 +68,7 @@ export function Safety() {
         </TabsContent>
 
         <TabsContent value="safety">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <Card className="border-border/50">
               <CardContent className="p-5">
                 <div className="mb-2 flex items-center gap-2">
@@ -103,7 +103,7 @@ export function Safety() {
           <p className="mb-4 text-sm text-muted-foreground">
             以下敘述需要實測或安全認證支持，不宜只憑架構圖直接宣稱：
           </p>
-          <div className="grid gap-2 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {OVERCLAIMS.map((o) => (
               <div
                 key={o}

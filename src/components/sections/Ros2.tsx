@@ -1,12 +1,12 @@
-import { Section, VizFrame } from "@/components/layout/Section";
-import { Ros2Graph } from "@/components/viz/Ros2Graph";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
-import { CodeBlock } from "@/components/ui/code-block";
-import { Callout } from "@/components/ui/callout";
-import { Badge } from "@/components/ui/badge";
-import { NAV } from "@/content/nav";
-import { Radio, Reply, ListTodo, Sliders, GitFork } from "lucide-react";
+import {Section, VizFrame} from "@/components/layout/Section";
+import {Ros2Graph} from "@/components/viz/Ros2Graph";
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
+import {Card, CardContent} from "@/components/ui/card";
+import {CodeBlock} from "@/components/ui/code-block";
+import {Callout} from "@/components/ui/callout";
+import {Badge} from "@/components/ui/badge";
+import {NAV} from "@/content/nav";
+import {Radio, Reply, ListTodo, Sliders, GitFork} from "lucide-react";
 
 const COMPARE: [string, string, string][] = [
   ["通訊核心", "ROS Master 集中管理", "DDS 分散式探索"],
@@ -33,15 +33,27 @@ export function Ros2() {
         <Ros2Graph />
       </VizFrame>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div>
           <h3 className="mb-3 text-lg font-semibold">四種通訊機制</h3>
           <Tabs defaultValue="topic">
-            <TabsList className="flex-wrap">
-              <TabsTrigger value="topic"><Radio className="size-3.5" />Topic</TabsTrigger>
-              <TabsTrigger value="service"><Reply className="size-3.5" />Service</TabsTrigger>
-              <TabsTrigger value="action"><ListTodo className="size-3.5" />Action</TabsTrigger>
-              <TabsTrigger value="param"><Sliders className="size-3.5" />Parameter</TabsTrigger>
+            <TabsList className="mb-5 grid h-auto w-full grid-cols-2 gap-1 sm:inline-flex sm:h-10 sm:w-auto">
+              <TabsTrigger value="topic">
+                <Radio className="size-3.5" />
+                Topic
+              </TabsTrigger>
+              <TabsTrigger value="service">
+                <Reply className="size-3.5" />
+                Service
+              </TabsTrigger>
+              <TabsTrigger value="action">
+                <ListTodo className="size-3.5" />
+                Action
+              </TabsTrigger>
+              <TabsTrigger value="param">
+                <Sliders className="size-3.5" />
+                Parameter
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="topic">
               <p className="mb-3 text-sm text-muted-foreground">
@@ -65,7 +77,8 @@ export function Ros2() {
             </TabsContent>
             <TabsContent value="action">
               <p className="mb-3 text-sm text-muted-foreground">
-                需較長時間、可回報進度、可取消的任務。含 Goal／Feedback／Result／Cancel。
+                需較長時間、可回報進度、可取消的任務。含
+                Goal／Feedback／Result／Cancel。
               </p>
               <CodeBlock title="常見 Action">{`NavigateToPose    前往指定位姿
 DockRobot         自動回充對接
@@ -90,7 +103,7 @@ lidar_min_range: 0.05`}</CodeBlock>
               <GitFork className="size-4 text-primary" />
               TF：座標轉換系統
             </h3>
-            <CodeBlock>{`map
+            <CodeBlock className="mb-2">{`map
  └─ odom
      └─ base_link
          ├─ laser
@@ -105,15 +118,17 @@ lidar_min_range: 0.05`}</CodeBlock>
         </div>
       </div>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
+      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[1.3fr_1fr]">
         <div>
           <h3 className="mb-3 text-lg font-semibold">ROS 1 與 ROS 2 差異</h3>
-          <div className="overflow-hidden rounded-xl border border-border/60">
-            <table className="w-full text-sm">
+          <div className="scrollbar-thin overflow-x-auto rounded-xl border border-border/60">
+            <table className="w-full min-w-[420px] text-sm">
               <thead>
                 <tr className="bg-secondary/50 text-left">
                   <th className="px-3 py-2 font-medium">面向</th>
-                  <th className="px-3 py-2 font-medium text-muted-foreground">ROS 1</th>
+                  <th className="px-3 py-2 font-medium text-muted-foreground">
+                    ROS 1
+                  </th>
                   <th className="px-3 py-2 font-medium text-primary">ROS 2</th>
                 </tr>
               </thead>
@@ -121,7 +136,9 @@ lidar_min_range: 0.05`}</CodeBlock>
                 {COMPARE.map((row, i) => (
                   <tr key={i} className="border-t border-border/40">
                     <td className="px-3 py-2 font-medium">{row[0]}</td>
-                    <td className="px-3 py-2 text-muted-foreground">{row[1]}</td>
+                    <td className="px-3 py-2 text-muted-foreground">
+                      {row[1]}
+                    </td>
                     <td className="px-3 py-2 text-foreground/90">{row[2]}</td>
                   </tr>
                 ))}
@@ -141,10 +158,24 @@ lidar_min_range: 0.05`}</CodeBlock>
                 <span className="text-sm font-semibold">通訊品質控制</span>
               </div>
               <ul className="space-y-1.5 text-sm text-muted-foreground">
-                <li><strong className="text-foreground">Reliable</strong>：確保送達（任務命令）</li>
-                <li><strong className="text-foreground">Best Effort</strong>：低延遲（LiDAR 高頻掃描）</li>
-                <li><strong className="text-foreground">Transient Local</strong>：後啟動者可取得地圖</li>
-                <li><strong className="text-foreground">Deadline／Liveliness</strong>：監控時效與存活</li>
+                <li>
+                  <strong className="text-foreground">Reliable</strong>
+                  ：確保送達（任務命令）
+                </li>
+                <li>
+                  <strong className="text-foreground">Best Effort</strong>
+                  ：低延遲（LiDAR 高頻掃描）
+                </li>
+                <li>
+                  <strong className="text-foreground">Transient Local</strong>
+                  ：後啟動者可取得地圖
+                </li>
+                <li>
+                  <strong className="text-foreground">
+                    Deadline／Liveliness
+                  </strong>
+                  ：監控時效與存活
+                </li>
               </ul>
               <p className="mt-2 text-xs text-amber-400/90">
                 QoS 配置錯誤會造成「節點都啟動了，卻彼此收不到資料」。

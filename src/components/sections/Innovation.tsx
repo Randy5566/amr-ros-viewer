@@ -74,7 +74,7 @@ export function Innovation() {
       icon={nav.icon}
       intro="以「能解決真實場域問題、可驗證、可商品化」為優先。創新不一定是新演算法，也可能是將 ROS 2 從「可運作」提升到「可維運」。"
     >
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {ITEMS.map((item) => (
           <Card key={item.no} className="group border-border/50 transition-colors hover:border-primary/40">
             <CardContent className="p-4">
@@ -93,7 +93,7 @@ export function Innovation() {
 
       <div className="mt-10">
         <h3 className="mb-4 text-lg font-semibold">建議優先投入的精進路線</h3>
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           {ROADMAP.map(([phase, subtitle, items], i) => (
             <Card
               key={phase}

@@ -21,7 +21,7 @@ export function Costmap() {
       icon={nav.icon}
       intro="Costmap 是導航系統用來表示障礙與風險的網格地圖。它不把機器人視為一個點，而是以「膨脹層」在障礙周圍建立成本漸層——保留機身寬度與安全距離。"
     >
-      <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start">
         <VizFrame caption="拖曳滑桿調整膨脹半徑，觀察狹窄走廊如何在半徑過大時被封住">
           <div className="p-2">
             <CostmapCanvas />

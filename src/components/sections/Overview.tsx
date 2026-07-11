@@ -24,7 +24,7 @@ export function Overview() {
       icon={nav.icon}
       intro="一台可自主移動的機器人底車，是由感測、定位、導航、控制多個子系統層層堆疊而成。資料由下而上流動，最終轉為實際移動。"
     >
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <VizFrame caption="子系統資料流：感測器 → 定位感知 → 導航決策 → 運動控制 → 實際移動">
           <div className="p-2">
             <DataFlowDiagram />
@@ -34,7 +34,7 @@ export function Overview() {
         <div className="space-y-6">
           <div>
             <h3 className="mb-3 text-lg font-semibold">底車的六項核心任務</h3>
-            <div className="grid gap-2 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {TASKS.map((t, i) => (
                 <Card key={i} className="border-border/50">
                   <CardContent className="flex items-center gap-3 p-3.5">

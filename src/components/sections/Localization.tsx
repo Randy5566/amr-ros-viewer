@@ -25,7 +25,7 @@ export function Localization() {
       icon={nav.icon}
       intro="正式營運通常使用固定地圖定位，而非每天重新建圖。AMCL 以「粒子」代表機器人可能的位置，比較「若在此處，LiDAR 理論上該看到什麼」與「實際看到什麼」，越符合的粒子權重越高，最後收斂到最可能位置。"
     >
-      <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
         <div>
           <VizFrame caption="粒子（紫）逐步收斂到真值；點擊「綁架機器人」觸發全域重定位">
             <div className="p-2">

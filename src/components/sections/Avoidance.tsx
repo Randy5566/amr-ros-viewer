@@ -31,14 +31,14 @@ export function Avoidance() {
       icon={nav.icon}
       intro="成熟的避障不是「看到就停」，而是分為預測、規劃、控制與安全四層協作。安全掃描區也可依速度動態放大或縮小。"
     >
-      <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
         <VizFrame caption="機器人具警告區（減速）與保護區（安全停止），行人離開後恢復前進">
           <AvoidanceCanvas />
         </VizFrame>
 
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">避障的四個層次</h3>
-          <div className="grid gap-2 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {LAYERS.map((l) => (
               <Card key={l.title} className="border-border/50">
                 <CardContent className="p-4">
@@ -71,7 +71,7 @@ export function Avoidance() {
         </div>
       </div>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_1fr]">
         <div>
           <h3 className="mb-3 text-lg font-semibold">常見避障問題</h3>
           <div className="space-y-2">

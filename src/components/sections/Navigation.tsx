@@ -1,10 +1,10 @@
-import { Section, VizFrame } from "@/components/layout/Section";
-import { PathPlanningCanvas } from "@/components/viz/PathPlanningCanvas";
-import { CodeBlock } from "@/components/ui/code-block";
-import { Card, CardContent } from "@/components/ui/card";
-import { Callout } from "@/components/ui/callout";
-import { Badge } from "@/components/ui/badge";
-import { NAV } from "@/content/nav";
+import {Section, VizFrame} from "@/components/layout/Section";
+import {PathPlanningCanvas} from "@/components/viz/PathPlanningCanvas";
+import {CodeBlock} from "@/components/ui/code-block";
+import {Card, CardContent} from "@/components/ui/card";
+import {Callout} from "@/components/ui/callout";
+import {Badge} from "@/components/ui/badge";
+import {NAV} from "@/content/nav";
 
 const NAV2_PARTS: [string, string][] = [
   ["Planner Server", "全域路徑規劃"],
@@ -28,7 +28,7 @@ export function Navigation() {
       icon={nav.icon}
       intro="導航不是單一演算法，而是多個模組協作的結果。Nav2 是 ROS 2 常用的自主導航框架：全域規劃器決定主要路線，局部控制器產生即時速度命令，並持續更新障礙物、必要時重新規劃。"
     >
-      <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
         <VizFrame caption="全域規劃器以 A* 找出路線（黃）；遇到動態行人阻擋時即時重新規劃繞行">
           <PathPlanningCanvas />
         </VizFrame>
@@ -47,22 +47,34 @@ export function Navigation() {
           <div className="grid grid-cols-2 gap-3">
             <Card>
               <CardContent className="p-4">
-                <div className="mb-1.5 text-sm font-semibold text-yellow-400">全域路徑規劃</div>
-                <p className="mb-2 text-xs text-muted-foreground">依靜態地圖找出可行路徑</p>
+                <div className="mb-1.5 text-sm font-semibold text-yellow-400">
+                  全域路徑規劃
+                </div>
+                <p className="mb-2 text-xs text-muted-foreground">
+                  依靜態地圖找出可行路徑
+                </p>
                 <div className="flex flex-wrap gap-1">
                   {["Dijkstra", "A*", "Hybrid A*", "Smac"].map((a) => (
-                    <Badge key={a} variant="outline" className="text-[10px]">{a}</Badge>
+                    <Badge key={a} variant="outline" className="text-[10px]">
+                      {a}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4">
-                <div className="mb-1.5 text-sm font-semibold text-lime-400">局部控制器</div>
-                <p className="mb-2 text-xs text-muted-foreground">轉成即時 linear.x／angular.z</p>
+                <div className="mb-1.5 text-sm font-semibold text-lime-400">
+                  局部控制器
+                </div>
+                <p className="mb-2 text-xs text-muted-foreground">
+                  轉成即時 linear.x／angular.z
+                </p>
                 <div className="flex flex-wrap gap-1">
                   {["DWB", "TEB", "RPP", "MPPI"].map((a) => (
-                    <Badge key={a} variant="outline" className="text-[10px]">{a}</Badge>
+                    <Badge key={a} variant="outline" className="text-[10px]">
+                      {a}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -71,9 +83,9 @@ export function Navigation() {
         </div>
       </div>
 
-      <div className="mt-8">
+      <div className="mt-8 mb-5">
         <h3 className="mb-3 text-lg font-semibold">Nav2 主要組成</h3>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {NAV2_PARTS.map(([name, desc]) => (
             <Card key={name} className="border-border/50">
               <CardContent className="flex items-center justify-between p-3.5">

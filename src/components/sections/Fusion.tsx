@@ -17,7 +17,7 @@ export function Fusion() {
       icon={nav.icon}
       intro="輪速編碼器記錄輪子轉動，已知輪徑與輪距即可估算前進距離與旋轉角度。但打滑與誤差會累積漂移，因此需與 IMU、LiDAR 定位融合。"
     >
-      <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
         <VizFrame caption="純里程計隨時間漂移；融合 IMU 與 LiDAR 定位後修正回真實軌跡，迴環時歸位">
           <SensorFusionCanvas />
         </VizFrame>

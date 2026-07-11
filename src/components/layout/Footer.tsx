@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/40 bg-card/30">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 md:grid-cols-[1.5fr_1fr]">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.5fr_1fr]">
           <div>
             <div className="mb-3 flex items-center gap-2">
               <Bot className="size-5 text-primary" />

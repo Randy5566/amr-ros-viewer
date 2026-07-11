@@ -1,9 +1,9 @@
-import { Section, VizFrame } from "@/components/layout/Section";
-import { SlamCanvas } from "@/components/viz/SlamCanvas";
-import { CodeBlock } from "@/components/ui/code-block";
-import { Callout } from "@/components/ui/callout";
-import { Card, CardContent } from "@/components/ui/card";
-import { NAV } from "@/content/nav";
+import {Section, VizFrame} from "@/components/layout/Section";
+import {SlamCanvas} from "@/components/viz/SlamCanvas";
+import {CodeBlock} from "@/components/ui/code-block";
+import {Callout} from "@/components/ui/callout";
+import {Card, CardContent} from "@/components/ui/card";
+import {NAV} from "@/content/nav";
 
 export function Slam() {
   const nav = NAV[4];
@@ -19,7 +19,7 @@ export function Slam() {
         <SlamCanvas />
       </VizFrame>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div>
           <h3 className="mb-3 text-lg font-semibold">2D LiDAR SLAM 流程</h3>
           <CodeBlock>{`LiDAR Scan
@@ -64,7 +64,7 @@ export function Slam() {
 
         <div>
           <h3 className="mb-3 text-lg font-semibold">Occupancy Grid 地圖</h3>
-          <div className="space-y-2">
+          <div className="space-y-2 mb-5">
             {[
               ["白色", "可通行（自由空間）", "bg-slate-200"],
               ["黑色", "障礙物", "bg-slate-900 border border-border"],
@@ -78,7 +78,8 @@ export function Slam() {
             ))}
           </div>
           <Callout variant="info" title="地圖解析度">
-            <code className="font-mono text-accent">0.05 m/cell</code> 代表每像素對應現實 5 公分。
+            <code className="font-mono text-accent">0.05 m/cell</code>{" "}
+            代表每像素對應現實 5 公分。
             解析度越高越精細，但記憶體、運算量與感測雜訊都被放大。
           </Callout>
         </div>

@@ -1,8 +1,8 @@
-import { Section, VizFrame } from "@/components/layout/Section";
-import { KinematicsViz } from "@/components/viz/KinematicsViz";
-import { CodeBlock } from "@/components/ui/code-block";
-import { Callout } from "@/components/ui/callout";
-import { NAV } from "@/content/nav";
+import {Section, VizFrame} from "@/components/layout/Section";
+import {KinematicsViz} from "@/components/viz/KinematicsViz";
+import {CodeBlock} from "@/components/ui/code-block";
+import {Callout} from "@/components/ui/callout";
+import {NAV} from "@/content/nav";
 
 const CHAIN = [
   "ROS 2 控制節點",
@@ -41,7 +41,7 @@ export function Kinematics() {
         </div>
       </VizFrame>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div>
           <h3 className="mb-3 text-lg font-semibold">從速度命令到馬達運轉</h3>
           <CodeBlock title="/cmd_vel → 差速轉換">{`linear.x  = 前進速度
@@ -55,7 +55,9 @@ angular.z = 旋轉速度
                 <span className="rounded-lg border border-border/60 bg-secondary/40 px-2.5 py-1 text-xs">
                   {c}
                 </span>
-                {i < CHAIN.length - 1 && <span className="text-muted-foreground">→</span>}
+                {i < CHAIN.length - 1 && (
+                  <span className="text-muted-foreground">→</span>
+                )}
               </div>
             ))}
           </div>
@@ -63,7 +65,7 @@ angular.z = 旋轉速度
 
         <div>
           <h3 className="mb-3 text-lg font-semibold">實際產品還需處理</h3>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-2">
             {REAL.map((r) => (
               <span
                 key={r}
